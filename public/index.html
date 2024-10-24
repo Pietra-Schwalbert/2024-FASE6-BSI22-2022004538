@@ -4,15 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Login</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
   <h1>Login</h1>
   <form>
-    <input placeholder="Email" type="email" name="email" value="susan@mail.com">
-    <input placeholder="Senha" type="password" name="password" value="123123">
-    <button type="submit">Entrar</button>
+    <input class="input-container" placeholder="Email" type="email" name="email" value="susan@mail.com">
+    <input class="input-container" placeholder="Senha" type="password" name="password" value="123123">
+    <div style="width: 100%;text-align: center;">
+      <button type="submit" data-action="login">Entrar</button>
+    </div>
   </form>
   <script>
     const form = document.querySelector('form')

@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="main.css">
   <script src="main.js" defer></script>
 </head>
+
+<div class="navBar">
+  <button data-action="logout" onclick="OnLogout()" id="logoutButton">Logout</button>
+</div>
+
 <body>
   <h1>Cadastro de Usuários</h1>
   <main>
@@ -23,6 +28,10 @@
         <label for="password">Senha</label>
         <input type="password" name="password">
       </div>
+      <div class="input-container">
+        <label for="repeatPassword">Confirmar senha</label>
+        <input type="password" name="repeatPassword">
+      </div>
       <div class="actions-container">
         <button data-action="delete">Excluir</button>
         <button data-action="update">Alterar</button>
@@ -30,5 +39,6 @@
       </div>
     </form>
   </main>
+  
 </body>
 </html>

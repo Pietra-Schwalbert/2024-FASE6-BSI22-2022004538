@@ -1,7 +1,5 @@
 import jwt from 'jsonwebtoken'
-
-const secret = 'my-secret-key'
-const expiresIn = '1h'
+import { secret, expiresIn } from '../config';
 
 export const sign = (payload: any): Promise<string> => {
   return new Promise((resolve, reject) => {
