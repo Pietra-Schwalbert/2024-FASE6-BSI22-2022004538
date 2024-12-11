@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  postgres_primary:
+    image: postgres:15
+    container_name: postgres_primary
+    environment:
+      POSTGRES_USER: primary_user
+      POSTGRES_PASSWORD: primary_password
+      POSTGRES_DB: primary_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_primary_data:/var/lib/postgresql/data
+
+  postgres_secondary:
+    image: postgres:15
+    container_name: postgres_secondary
+    environment:
+      POSTGRES_USER: secondary_user
+      POSTGRES_PASSWORD: secondary_password
+      POSTGRES_DB: secondary_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_secondary_data:/var/lib/postgresql/data
+
+  postgres_tertiary:
+    image: postgres:15
+    container_name: postgres_tertiary
+    environment:
+      POSTGRES_USER: tertiary_user
+      POSTGRES_PASSWORD: tertiary_password
+      POSTGRES_DB: tertiary_db
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_tertiary_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_primary_data:
+  postgres_secondary_data:
+  postgres_tertiary_data:
